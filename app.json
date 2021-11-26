@@ -36,13 +36,12 @@
             "required": true
         },
         "SESSION_NAME": {
-            "description": "fill with the pyrogram String Session generate from here @Pyrogram_String_Bot",
+            "description": "fill with the pyrogram String Session",
             "required": true
         },
         "SUDO_USERS": {
             "description": "list of user ids to be added to sudo member list, or just fill with your id",
             "required": true
-            "value": "1342820594"
         },
         "GROUP_SUPPORT": {
             "description": "if you have group, then fill the group username here without @",
@@ -52,7 +51,7 @@
         "UPDATES_CHANNEL": {
             "description": "if you have channel, then fill the channel username here without @",
             "required": true,
-            "value": "Give_Me_Heart"
+            "value": "AsadSupport"
         },
         "OWNER_NAME": {
             "description": "fill with your telegram account username without @",
