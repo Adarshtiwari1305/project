@@ -17,7 +17,7 @@ from rocksdriver.decorators import authorized_users_only, sudo_users_only
 
 
 @Client.on_message(
-    command(["join", f"join@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
+    command(["userbotjoin", f"userbotjoin@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
 )
 @authorized_users_only
 async def join_chat(c: Client, m: Message):
@@ -31,7 +31,7 @@ async def join_chat(c: Client, m: Message):
             (await user.get_me()).id,
             can_manage_voice_chats=True
         )
-        return await user.send_message(chat_id, "✅ **Usᴇʀʙᴏᴛ ᴊᴏɪɴᴅ ᴛʜᴇ ᴄʜᴀᴛ**")
+        return await user.send_message(chat_id, "✅ **ᴜsᴇʀʙᴏᴛ ᴇɴᴛᴇʀᴇᴅ ᴛʜᴇ ᴄʜᴀᴛ**)
     except UserAlreadyParticipant:
         admin = await m.chat.get_member((await user.get_me()).id)
         if not admin.can_manage_voice_chats:
@@ -39,8 +39,8 @@ async def join_chat(c: Client, m: Message):
                 (await user.get_me()).id,
                 can_manage_voice_chats=True
             )
-            return await user.send_message(chat_id, "✅ **Usᴇʀʙᴏᴛ ᴀʟʀᴇᴀᴅʏ ɪɴ ᴄʜᴀᴛ**")
-        return await user.send_message(chat_id, "✅ **Usᴇʀʙᴏᴛ ᴀʟʀᴇᴀᴅʏ ɪɴ ᴄʜᴀᴛ**")
+            return await user.send_message(chat_id, "✅ **ᴜsᴇʀʙᴏᴛ ᴀʟʀᴇᴀᴅʏ ɪɴ ᴄʜᴀᴛ**")
+        return await user.send_message(chat_id, "✅ **ᴜsᴇʀʙᴏᴛ ᴀʟʀᴇᴀᴅʏ ɪɴ ᴄʜᴀᴛ**")
 
 
 @Client.on_message(command(["userbotleave",
@@ -53,12 +53,12 @@ async def leave_chat(_, m: Message):
         await user.leave_chat(chat_id)
         return await _.send_message(
             chat_id,
-            "✅ **Usᴇʀʙᴏᴛ ʟᴇᴀᴠᴇᴅ ᴛʜᴇ ᴄʜᴀᴛ**",
+            "✅ userbot leaved chat",
         )
     except UserNotParticipant:
         return await _.send_message(
             chat_id,
-            "❌ **Usᴇʀʙᴏᴛ ᴀʟʀᴇᴀᴅʏ ʟᴇᴀᴠᴇ ᴛʜᴇ ᴄʜᴀᴛ**",
+            "❌ userbot already leave chat",
         )
 
 
@@ -70,7 +70,7 @@ async def leave_all(client, message):
 
     left = 0
     failed = 0
-    lol = await message.reply("🔄 **ᴜsᴇʀʙᴏᴛ** leaving all chats !")
+    lol = await message.reply("🔄 **userbot** leaving all chats !")
     async for dialog in USER.iter_dialogs():
         try:
             await USER.leave_chat(dialog.chat.id)
