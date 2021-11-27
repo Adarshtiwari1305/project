@@ -377,8 +377,9 @@ async def stream(c: Client, m: Message):
                     )
                     await m.reply_photo(
                         photo=f"{IMG_2}",
-                        caption=f"💡 **[Aᴜᴅɪᴏ ʟɪᴠᴇ]({link}) sᴛʀᴇᴀᴍ sᴛᴀʀᴛᴇs.**\n\n💭 **ᴄʜᴀᴛ:** `{chat_id}`\n💡 **sᴛᴀᴛᴜs:** `Playing`\n🎧 **ʀᴇǫᴜᴇsᴛ ʙʏ:** {requester}",
+                        caption=f"💡 **[Music live]({link}) stream started.**\n\n💭 **Chat:** `{chat_id}`\n💡 **Status:** `Playing`\n🎧 **Request by:** {requester}",
                         reply_markup=keyboard,
+                    )
                 except Exception as ep:
                     await suhu.delete()
-                    await m.reply_text(f"🚫 **Eʀʀᴏʀ**: `{ep}`")
+                    await m.reply_text(f"🚫 error: `{ep}`")
