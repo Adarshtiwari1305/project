@@ -143,31 +143,13 @@ async def pause(client, m: Message):
     if chat_id in QUEUE:
         try:
             await call_py.pause_stream(chat_id)
-            await message.reply_photo(
-        photo=f"https://telegra.ph/file/5017169a6cc138ecd1000.jpg",
-        caption=f"""⏸ **ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴘᴀᴜꜱᴇᴅ ᴛᴏ ʀᴇsᴜᴍᴇ ᴜsᴇ /resume**""",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("❤️ ʜᴇᴀʀᴛ", url=f"https://t.me/Give_Me_Heart"),
-                    InlineKeyboardButton("👑 ɢʀᴏᴜᴘ", url=f"https://t.me/Shayri_Music_Lovers"),
-                ]
-            ]
-        ),
-    )
+            await m.reply(
+                "⏸ **Tʀᴀᴄᴋᴇ ᴘᴀᴜsᴇᴅ.**\n\n• **Tᴏ ʀᴇsᴜᴍᴇ ᴜsᴇ ᴛʜᴇ**\n» /resume **ᴄᴏᴍᴍᴀɴᴅ**."
+            )
+        except Exception as e:
+            await m.reply(f"🚫 **Eʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await message.reply_photo(
-        photo=f"https://telegra.ph/file/87e1b57f3713bdff3ca0c.jpg",
-        caption=f"""❗️ **ɴᴏᴛʜɪɴɢ ɪꜱ ᴘʟᴀʏɪɴɢ**""",
-    reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton("❤️ ʜᴇᴀʀᴛ", url=f"https://t.me/Give_Me_Heart"),
-                    InlineKeyboardButton("👑 ɢʀᴏᴜᴘ", url=f"https://t.me/Shayri_Music_Lovers"),
-                ]
-            ]
-        ),
-    )
+        await m.reply("❌ **ᴀᴛ {BOT_NAME} ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
 
 
 @Client.on_message(
