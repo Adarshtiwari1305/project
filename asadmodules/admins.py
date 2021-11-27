@@ -71,11 +71,11 @@ async def skip(client, m: Message):
     if len(m.command) < 2:
         op = await skip_current_song(chat_id)
         if op == 0:
-            await m.reply("❌ **ᴀᴛ** {BOT_NAME} **ɴᴏᴛʜɪɴɢ ɪs ᴄᴜʀʀᴇɴᴛʟʏ ᴘʟᴀʏɪɴɢ**")
+            await m.reply("❌ **ᴀᴛ [{BOT_NAME}](t.me/{GROUP_SUPPORT}) ɴᴏᴛʜɪɴɢ ɪs ᴄᴜʀʀᴇɴᴛʟʏ ᴘʟᴀʏɪɴɢ**")
         elif op == 1:
-            await m.reply("✅ __Qᴜᴇᴜᴇs__ **ɪs ᴇᴍᴘᴛʏ.**\n\n**• ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ғʀᴏᴍ** {BOT_NAME}")
+            await m.reply("✅ __Qᴜᴇᴜᴇs__ **ɪs ᴇᴍᴘᴛʏ.**\n\n**• ғʀᴏᴍ [{BOT_NAME}](t.me/{GROUP_SUPPORT}) ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ**")
         elif op == 2:
-            await m.reply("🗑️ **Cʟᴇᴀʀɪɴɢ ᴛʜᴇ Qᴜᴇᴜᴇs**\n\n**ғʀᴏᴍ** {BOT_NAME} **ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ**")
+            await m.reply("🗑️ **Cʟᴇᴀʀɪɴɢ ᴛʜᴇ Qᴜᴇᴜᴇs**\n\n**ғʀᴏᴍ [{BOT_NAME}](t.me/{GROUP_SUPPORT}) ᴜsᴇʀʙᴏᴛ ʟᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ**")
         else:
             await m.reply_photo(
                 photo=f"{IMG_3}",
@@ -111,7 +111,7 @@ async def stop(client, m: Message):
         try:
             await call_py.leave_group_call(chat_id)
             clear_queue(chat_id)
-            await m.reply("✅ **ғʀᴏᴍ** {BOT_NAME} **sᴛʀᴇᴀᴍ ʜᴀs ᴇɴᴅᴇᴅ**")
+            await m.reply("✅ **ғʀᴏᴍ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **sᴛʀᴇᴀᴍ ʜᴀs ᴇɴᴅᴇᴅ**")
             keyboard = InlineKeyboardMarkup(
         [
             [
@@ -123,7 +123,7 @@ async def stop(client, m: Message):
         except Exception as e:
             await m.reply(f"🚫 **Eʀʀᴏʀr:**\n\n`{e}`")
     else:
-        await m.reply("❌ **ᴀᴛ** {BOT_NAME} **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
+        await m.reply("❌ **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
         keyboard = InlineKeyboardMarkup(
         [
             [
@@ -149,7 +149,7 @@ async def pause(client, m: Message):
         except Exception as e:
             await m.reply(f"🚫 **Eʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply("❌ **ᴀᴛ** {BOT_NAME} **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
+        await m.reply("❌ **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
 
 
 @Client.on_message(
@@ -162,7 +162,7 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                "▶️ **ᴀᴛ** {BOT_NAME} **Tʀᴀᴄᴋ ɪs ʀᴇsᴜᴍᴇᴅ.**\n\n• **To pause the stream, use the**\n» /pause command."
+                "▶️ **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **Tʀᴀᴄᴋ ɪs ʀᴇsᴜᴍᴇᴅ.**\n\n• **To pause the stream, use the**\n» /pause command."
             )
             keyboard = InlineKeyboardMarkup(
         [
@@ -175,7 +175,7 @@ async def resume(client, m: Message):
         except Exception as e:
             await m.reply(f"🚫 **Error:**\n\n`{e}`")
     else:
-        await m.reply("❌ **ᴀᴛ** {BOT_NAME} **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
+        await m.reply("❌ **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
         keyboard = InlineKeyboardMarkup(
         [
             [
@@ -196,7 +196,7 @@ async def mute(client, m: Message):
         try:
             await call_py.mute_stream(chat_id)
             await m.reply(
-                "🔇 **ᴀᴛ** {BOT_NAME} **ᴜsᴇʀʙᴏᴛ ɪs ᴍᴜᴛᴇᴅ.**\n\n• **Tᴏ ᴜɴᴍᴜᴛᴇ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ, ᴜsᴇ ᴛʜᴇ**\n» /unmute **ᴄᴏᴍᴍᴀɴᴅ**."
+                "🔇 **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **ᴜsᴇʀʙᴏᴛ ɪs ᴍᴜᴛᴇᴅ.**\n\n• **Tᴏ ᴜɴᴍᴜᴛᴇ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ, ᴜsᴇ ᴛʜᴇ**\n» /unmute **ᴄᴏᴍᴍᴀɴᴅ**."
             )
             keyboard = InlineKeyboardMarkup(
         [
@@ -209,7 +209,7 @@ async def mute(client, m: Message):
         except Exception as e:
             await m.reply(f"🚫 **Eʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply("❌ **ᴀᴛ** {BOT_NAME} **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
+        await m.reply("❌ **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
         keyboard = InlineKeyboardMarkup(
         [
             [
@@ -230,7 +230,7 @@ async def unmute(client, m: Message):
         try:
             await call_py.unmute_stream(chat_id)
             await m.reply(
-                "🔊 **ᴀᴛ** {BOT_NAME} **ᴜsᴇʀʙᴏᴛ ɪs ᴜɴᴍᴜᴛᴇᴅ.**\n\n• **ᴛᴏ ᴍᴜᴛᴇ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴜsᴇ ᴛʜᴀ**\n» /mute **ᴄᴏᴍᴍᴀɴᴅ**."
+                "🔊 **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **ᴜsᴇʀʙᴏᴛ ɪs ᴜɴᴍᴜᴛᴇᴅ.**\n\n• **ᴛᴏ ᴍᴜᴛᴇ ᴛʜᴇ ᴜsᴇʀʙᴏᴛ ᴜsᴇ ᴛʜᴀ**\n» /mute **ᴄᴏᴍᴍᴀɴᴅ**."
             )
             keyboard = InlineKeyboardMarkup(
         [
@@ -243,7 +243,7 @@ async def unmute(client, m: Message):
         except Exception as e:
             await m.reply(f"🚫 **Eʀʀᴏʀ:**\n\n`{e}`")
     else:
-        await m.reply("❌ **ᴀᴛ** {BOT_NAME} **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
+        await m.reply("❌ **ᴀᴛ** [{BOT_NAME}](t.me/{GROUP_SUPPORT}) **ɴᴏᴛʜɪɴɢ ɪs sᴛʀᴇᴀᴍɪɴɢ**")
         keyboard = InlineKeyboardMarkup(
         [
             [
