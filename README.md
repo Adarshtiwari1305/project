@@ -4,7 +4,7 @@ My Private Project Is A Telegram Bot Project That's Allow You To Play Music On T
 
 <p align="center"><a href=""> <img src="https://img.shields.io/badge/Copy%20Paster%20Ki%20Gand%20Main%20Land-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
-<p align="center"><a href="https://t.me/Dr_Asad_Ali"><img src="https://telegra.ph/file/5c302b628a07d836ee098.gif" width="720"></a></p>
+<p align="center"><a href="https://t.me/shaitaan_bacchaa"><img src="https://telegra.ph/file/5c302b628a07d836ee098.gif" width="720"></a></p>
 
 ### ❤️ Get STRING_SESSION from below:
 
@@ -14,7 +14,7 @@ My Private Project Is A Telegram Bot Project That's Allow You To Play Music On T
 
 The easy way to host this bot, deploy to Heroku, Change the app country to Europe (it will help to make the bot stable).
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/jankarikiduniya/My-Private-Project)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Adarshtiwari1305/project)
 
 ## ✨ Features
 
