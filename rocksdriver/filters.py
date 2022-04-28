@@ -1,8 +1,7 @@
 # A Powerful Music Bot Property Of Rocks Indian Largest Chatting Group
 # Without Credit (Mother Fucker)
-# Rocks © @Dr_Asad_Ali © Rocks
-# Owner Asad + Harshit
-
+# Aadriti © @shaitaan_bacchaa © Aadriti
+# Owner Adarsh + Aadriti
 
 from pyrogram import filters
 from typing import List, Union
